@@ -3,7 +3,9 @@ from flask_jwt_extended import JWTManager
 from flask_restful import Api
 
 from config import Config
-from resources.movie import MovieListResource, MovieResource
+from resources.movie import MoiveSearchResource, MovieListResource, MovieRatingResource, MovieResource
+from resources.rating import RatingListResource
+from resources.recommend import MovieRecomRealTimeResource, MovieRecomResource
 from resources.user import UserLoginResource, UserLogoutResource, UserRegisterResource, jwt_blacklist
 
 app = Flask(__name__)
@@ -29,6 +31,14 @@ api.add_resource(UserLogoutResource, '/users/logout')
 
 api.add_resource(MovieListResource, '/movie')
 api.add_resource(MovieResource, '/movie/<int:movie_id>')
+api.add_resource(RatingListResource, '/rating')
+
+api.add_resource(MovieRatingResource, '/movie/<int:movie_id>/rating')
+api.add_resource(MoiveSearchResource, '/movie/search')
+
+api.add_resource(MovieRecomResource, '/movie/recommend')
+
+api.add_resource(MovieRecomRealTimeResource, '/movie/realtime')
 
 if __name__ == '__main__' :
     app.run()

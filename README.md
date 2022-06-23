@@ -29,3 +29,9 @@ created_at => createdAt
 
 ### rating 컬럼에 index 추가
 index 추가하면 데이터베이스 성능이 빨라진다
+
+## 목록을 가져오는 API
+> - 페이징처리를 해줘야한다
+
+## 영화명 검색하는 API
+> - 쿼리에 avg 같은 float 은 제이슨에서 읽도록 변경 시켜줘야 한다(for문 으로)
