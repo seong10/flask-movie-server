@@ -18,6 +18,9 @@
 > - 1. 개발했었던 구조 가져오기
 > - 2. 쿼리문 DB에서 테스트 코드하기
 
+1. api 경로 설계
+2. 소스코드
+
 # 추가
 테이블의 컬럼이름을 헝가리안 표기법으로 하겠습니다
 
@@ -35,6 +38,18 @@ created_at => createdAt
 
 ### 영화명 검색하는 API
 > - 쿼리에 avg 같은 float 은 제이슨에서 읽도록 변경 시켜줘야 한다(for문 으로)
+
+### 'mySQL 접속위한 유저 만들기'의 코드
+> use mysql;
+>
+> -- mySQL 접속위한 유저 만들기
+> create user 'm_p_user'@'%' identified by '1234';
+>					-- '%' => 네트워크 통해서 접속가능하게 하겠다
+> 
+> grant all on movie_project_db.* to 'm_p_user'@'%';
+> -- grant all on
+> -- 모든 권한을 주겠다
+> -- 모든권한을 준다 momo_db의 *(모든것)에 to 'memo_user' 에다가
 
 # 영화실시간 추천
 - 큰 구조가
