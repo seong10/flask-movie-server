@@ -51,6 +51,22 @@ created_at => createdAt
 > -- 모든 권한을 주겠다
 > -- 모든권한을 준다 momo_db의 *(모든것)에 to 'memo_user' 에다가
 
+### mysql 테이블 생성문 만들기
+> -- 테이블생성문 만들고싶으면
+> -- 테이블 우측마우스 > 카피 투 테이블 > 크리에잇 스테이트먼트
+> -- ex)
+> -- CREATE TABLE `likes` (
+> --   `id` int unsigned NOT NULL AUTO_INCREMENT,
+> --   `postingId` int DEFAULT NULL,
+> --   `userId` int DEFAULT NULL,
+> --   PRIMARY KEY (`id`)
+> -- ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+### 좋아요테이블 만들때
+두개다 유니크설정하려면
+mysql 테이블 설정에 index로 가서 두가지 컬럼다 같이 유니크설정 하는것
+
+
 # 영화실시간 추천
 - 큰 구조가
 > 1. df 데이터프레임을 어떻게 만드느냐 => 디비에서 바로 가져오기
